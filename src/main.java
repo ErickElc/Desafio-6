@@ -23,13 +23,13 @@ public class main {
         System.out.println("Olá, Bem vindo ao cadastro de ninjas");
 
         System.out.println(
-                "Selecione um numero para começar!\n" +
-                        "1- Listar todos os Ninjas\n" +
-                        "2- Remover o primeiro ninja e adicionar outro no local\n" +
-                        "3- Listar ninja de uma posição específica\n" +
-                        "4- Adicionar um ninja em alguma posição\n" +
-                        "5- Ordenar por Idade, nome e vila\n" +
-                        "6- Sair"
+            "Selecione um numero para começar!\n" +
+            "1- Listar todos os Ninjas\n" +
+            "2- Remover o primeiro ninja e adicionar outro no local\n" +
+            "3- Listar ninja de uma posição específica\n" +
+            "4- Adicionar um ninja em alguma posição\n" +
+            "5- Ordenar por Idade, nome e vila\n" +
+            "6- Sair"
         );
 
         int selectedOption = Integer.parseInt(sc.nextLine());
@@ -73,13 +73,13 @@ public class main {
                     break;
             }
             System.out.println(
-                    "Selecione um numero para começar!\n" +
-                            "1- Listar todos os Ninjas\n" +
-                            "2- Remover o primeiro ninja e adicionar outro no local\n" +
-                            "3- Listar ninja de uma posição específica\n" +
-                            "4- Adicionar um ninja em alguma posição\n" +
-                            "5- Ordenar por Idade, nome e vila\n" +
-                            "6- Sair"
+                "Selecione um numero para começar!\n" +
+                "1- Listar todos os Ninjas\n" +
+                "2- Remover o primeiro ninja e adicionar outro no local\n" +
+                "3- Listar ninja de uma posição específica\n" +
+                "4- Adicionar um ninja em alguma posição\n" +
+                "5- Ordenar por Idade, nome e vila\n" +
+                "6- Sair"
             );
             selectedOption = Integer.parseInt(sc.nextLine());
         }
