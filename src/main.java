@@ -22,9 +22,15 @@ public class main {
 
         System.out.println("Olá, Bem vindo ao cadastro de ninjas");
 
-        System.out.println("Selecione um numero para começar!\n"+
-                "1- Listar todos os Ninjas\n 2- Remover o primeiro ninja e adicionar outro no local\n 3- listar ninja de uma posição específica\n 4- adicionar um ninja em alguma posição" +
-                "\n5- Ordenar por Idade, nome e vila");
+        System.out.println(
+                "Selecione um numero para começar!\n" +
+                        "1- Listar todos os Ninjas\n" +
+                        "2- Remover o primeiro ninja e adicionar outro no local\n" +
+                        "3- Listar ninja de uma posição específica\n" +
+                        "4- Adicionar um ninja em alguma posição\n" +
+                        "5- Ordenar por Idade, nome e vila\n" +
+                        "6- Sair"
+        );
 
         int selectedOption = Integer.parseInt(sc.nextLine());
         while( selectedOption != 6 ) {
@@ -36,13 +42,7 @@ public class main {
                     break;
                 case 2:
                     System.out.println("Removendo Ninja, siga os próximos passos");
-                    System.out.println("Digite um nome: ");
-                    String nome = sc.nextLine();
-                    System.out.println("Digite uma idade: ");
-                    int idade = Integer.parseInt(sc.nextLine());
-                    System.out.println("Digite o nome da vila: ");
-                    String nomeVila = sc.nextLine();
-                    Ninja novoNinja = new Ninja(nome, idade, nomeVila);
+                    Ninja novoNinja = createNinja(sc);
                     ninjasList.removeFirst();
                     ninjasList.addFirst(novoNinja);
 
@@ -57,13 +57,7 @@ public class main {
                 case 4:
                     System.out.println("Digite a posição que vc quer adicionar o ninja");
                     int posicaoNinja = Integer.parseInt(sc.nextLine());
-                    System.out.println("Digite um nome: ");
-                    String nome2 = sc.nextLine();
-                    System.out.println("Digite uma idade: ");
-                    int idade2 = Integer.parseInt(sc.nextLine());
-                    System.out.println("Digite o nome da vila: ");
-                    String nomeVila2 = sc.nextLine();
-                    Ninja novoNinja2 = new Ninja(nome2, idade2, nomeVila2);
+                    Ninja novoNinja2 = createNinja(sc);
                     ninjasList.removeFirst();
                     if(posicaoNinja < ninjasList.size()) {
                         ninjasList.add(posicaoNinja, novoNinja2);
@@ -74,20 +68,37 @@ public class main {
                     break;
                 case 5:
                     ordenarPorOpc(ninjasList, sc);
-
                     break;
                 default:
                     break;
             }
-            System.out.println("Selecione um numero para começar!\n "+
-                    "1- Listar todos os Ninjas\n 2- Remover o primeiro ninja e adicionar outro no local\n 3- listar ninja de uma posição específica\n 4- adicionar um ninja em alguma posição" +
-                    "\n 5- Ordenar por Idade, nome e vila" + "\n 6 - Sair");
+            System.out.println(
+                    "Selecione um numero para começar!\n" +
+                            "1- Listar todos os Ninjas\n" +
+                            "2- Remover o primeiro ninja e adicionar outro no local\n" +
+                            "3- Listar ninja de uma posição específica\n" +
+                            "4- Adicionar um ninja em alguma posição\n" +
+                            "5- Ordenar por Idade, nome e vila\n" +
+                            "6- Sair"
+            );
             selectedOption = Integer.parseInt(sc.nextLine());
         }
         sc.close();
     }
+
+    static Ninja createNinja(Scanner sc){
+        System.out.println("Digite um nome: ");
+        String nome = sc.nextLine();
+        System.out.println("Digite uma idade: ");
+        int idade = Integer.parseInt(sc.nextLine());
+        System.out.println("Digite o nome da vila: ");
+        String nomeVila = sc.nextLine();
+        Ninja novoNinja = new Ninja(nome, idade, nomeVila);
+        return novoNinja;
+    }
+
     static void ordenarPorOpc(LinkedList<Ninja> ninjasList, Scanner sc){
-        System.out.println("Selecione por qual dado você quer ordenar");
+        System.out.println("Selecione qual é o paramentro de ordenação");
         System.out.println("1 - nome\n 2- idade\n 3- Vila\n 4- Sair");
         int orderOption = Integer.parseInt(sc.nextLine());
         LinkedList<Ninja> ninjasList2 = new LinkedList<>(ninjasList);
