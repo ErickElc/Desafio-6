@@ -108,6 +108,8 @@ public class main {
                 Collections.sort(ninjasList2,(n1, n2) -> n1.getVila().compareTo(n2.getVila()));
                 ListarItens(ninjasList2);
                 break;
+            case 4:
+                break;
             default:
                 System.out.println("Opção invalida, tente novamente");
                 ordenarPorOpc(ninjasList2, sc);
