@@ -21,16 +21,7 @@ public class main {
         ninjasList.add(new Ninja("Rock Lee", 18, "Konoha"));
 
         System.out.println("Olá, Bem vindo ao cadastro de ninjas");
-
-        System.out.println(
-            "Selecione um numero para começar!\n" +
-            "1- Listar todos os Ninjas\n" +
-            "2- Remover o primeiro ninja e adicionar outro no local\n" +
-            "3- Listar ninja de uma posição específica\n" +
-            "4- Adicionar um ninja em alguma posição\n" +
-            "5- Ordenar por Idade, nome e vila\n" +
-            "6- Sair"
-        );
+        menu();
 
         int selectedOption = Integer.parseInt(sc.nextLine());
         while( selectedOption != 6 ) {
@@ -72,20 +63,22 @@ public class main {
                 default:
                     break;
             }
-            System.out.println(
-                "Selecione um numero para começar!\n" +
-                "1- Listar todos os Ninjas\n" +
-                "2- Remover o primeiro ninja e adicionar outro no local\n" +
-                "3- Listar ninja de uma posição específica\n" +
-                "4- Adicionar um ninja em alguma posição\n" +
-                "5- Ordenar por Idade, nome e vila\n" +
-                "6- Sair"
-            );
+            menu();
             selectedOption = Integer.parseInt(sc.nextLine());
         }
         sc.close();
     }
-
+    static void menu(){
+        System.out.println(
+            "Selecione um numero para começar!\n" +
+            "1- Listar todos os Ninjas\n" +
+            "2- Remover o primeiro ninja e adicionar outro no local\n" +
+            "3- Listar ninja de uma posição específica\n" +
+            "4- Adicionar um ninja em alguma posição\n" +
+            "5- Ordenar por Idade, nome e vila\n" +
+            "6- Sair"
+        );
+    }
     static Ninja createNinja(Scanner sc){
         System.out.println("Digite um nome: ");
         String nome = sc.nextLine();
